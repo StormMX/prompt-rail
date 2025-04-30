@@ -1,0 +1,541 @@
+/* CSS Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+/* CSS Resets End */
+
+/* Custom styling */
+:root {
+    /* Dark theme */
+    --bg-color: #222222;
+    --text-color: #e1e1e1;
+    --border-color: #3a3a3a;
+    --accent-color: #0a66c2;
+    --hover-color: #0c7bd6;
+    --input-bg: #2d2d2d;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-size-sm: 0.8rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2.5rem;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 4rem;
+
+    /* Border radius */
+    --border-radius: 4px;
+    --border-radius-lg: 8px;
+}
+
+[data-theme="light"] {
+    --bg-color: #f5f5f7;
+    --text-color: #333333;
+    --border-color: #e1e1e1;
+    --input-bg: #ffffff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header, footer {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-container, .footer-container {
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.personal-link {
+    padding: 10px;
+}
+
+header {
+    top: 0;
+    z-index: 100;
+    border-bottom: none;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+footer {
+    margin-top: 5%;
+    text-align: center;
+    border-top: none;
+}
+
+.theme-toggle,
+.github-project-icon {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.theme-toggle:hover,
+.github-project-icon:hover {
+    color: var(--text-color);
+}
+
+.github-project-icon i {
+    font-size: 1.4rem;
+}
+
+/* Layout */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.content-section {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.form-container {
+    flex: 1;
+    background: var(--input-bg);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.output-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Form */
+.form-field {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.sub-field {
+    margin-bottom: var(--spacing-md);
+}
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+textarea,
+input[type="text"],
+select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+textarea {
+    resize: none;
+    min-height: 10em;
+}
+
+.char-count {
+    display: block;
+    text-align: right;
+    font-size: var(--font-size-sm);
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Form Layout */
+.roles-container {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.roles-container .sub-field {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs) var(--spacing-md);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+}
+
+/* Styling checkbox */
+.checkbox-group input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.checkbox-group label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    transition: all 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::before,
+.checkbox-group label:has(input[type="checkbox"]:checked)::before {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::after,
+.checkbox-group label:has(input[type="checkbox"]:checked)::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Styling radio buttons */
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.radio-group label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    background-color: var(--input-bg);
+    transition: all 0.3s ease;
+}
+
+.radio-group input[type="radio"]:checked + label::before,
+.radio-group label:has(input[type="radio"]:checked)::before {
+    border-color: var(--accent-color);
+    background-color: var(--input-bg);
+}
+
+.radio-group input[type="radio"]:checked + label::after,
+.radio-group label:has(input[type="radio"]:checked)::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-left: 5px;
+    pointer-events: none;
+}
+
+.radio-group label:hover::before {
+    border-color: var(--accent-color);
+}
+
+.radio-group input[type="radio"]:focus-visible + label::before {
+    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--accent-color);
+}
+
+/* Buttons */
+.generate-button,
+.copy-button {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.generate-button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+}
+
+.generate-button:hover {
+    background: var(--hover-color);
+}
+
+.copy-button {
+    background: var(--accent-color);
+    color: white;
+    border: 1px solid var(--border-color);
+}
+
+.copy-button:hover {
+    background: var(--border-color);
+}
+
+/* Output */
+#output {
+    flex: 1;
+    min-height: 300px;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 1024px) {
+    .content-section {
+        max-width: 100%;
+        padding: var(--spacing-md);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+    }
+
+    .form-container,
+    .output-container {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .checkbox-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .roles-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        padding: var(--spacing-sm);
+    }
+
+    .hero-section {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .form-container {
+        padding: var(--spacing-md);
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field {
+        margin-bottom: var(--spacing-md);
+    }
+
+    textarea {
+        min-height: 8em;
+    }
+
+    #output {
+        min-height: 200px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .github-project-icon i {
+        font-size: 1.2rem;
+    }
+}

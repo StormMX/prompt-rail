@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Prompt Generator</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+</head>
+
+<body>
+	<header>
+		<div class="header-container">
+			<div class="logo">
+				<img src="./Assets/Logo.png" alt="Prompt Rail Logo">
+			</div>
+			<div class="header-icons">
+				<a href="https://github.com/StormMX/prompt-rail" target="_blank" class="github-project-icon">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<!-- Intestazione -->
+		<section class="hero-section">
+			<h1 class="hero-title">Prompt Rail</h1>
+			<p class="hero-subtitle">Prompt perfetti. Nessun errore. Solo risultati.</p>
+		</section>
+
+		<!-- Content -->
+		<section class="content-section">
+			<!-- Input area -->
+			<div class="form-container">
+				<form id="prompt-form">
+					<div class="form-field">
+						<label for="objective-input">Obiettivo</label>
+						<textarea id="objective-input" maxlength="4000" placeholder="Es. Vorrei creare un nuovo Brand."></textarea>
+						<span class="char-count" id="objective-count"></span>
+					</div>
+
+					<div class="form-field">
+						<div class="roles-container">
+							<div class="sub-field">
+								<label for="role-ai-input">Ruolo AI</label>
+								<input type="text" id="role-ai-input" placeholder="Es. Esperto di Marketing e Design."/>
+							</div>
+							<div class="sub-field">
+								<label for="role-user-input">Ruolo Utente</label>
+								<input type="text" id="role-user-input" placeholder="Es. Ideatore del Brand."/>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-field">
+						<label>Formato della risposta</label>
+						<div class="checkbox-group">
+							<label><input type="checkbox" value="text-long">Testo</label>
+							<label><input type="checkbox" value="text-short">Riassunto</label>
+							<label><input type="checkbox" value="email">Email</label>
+							<label><input type="checkbox" value="bullet">Elenco</label>
+							<label><input type="checkbox" value="code">Codice</label>
+							<label><input type="checkbox" value="table">Tabella</label>
+							<label><input type="checkbox" value="file">File</label>
+						</div>
+					</div>
+
+					<div class="form-field">
+						<label>Stile</label>
+						<div class="radio-group">
+							<label><input type="radio" name="tone" value="friendly" checked>Amichevole</label>
+							<label><input type="radio" name="tone" value="formal">Formale</label>
+							<label><input type="radio" name="tone" value="technical">Tecnico</label>
+						</div>
+					</div>
+
+					<div class="form-field">
+						<label for="extra">Extra</label>
+						<textarea id="extra-input" maxlength="1000" placeholder="Es. Se il formato risposta selezionato è [Riassunto] limita a massimo 5 righe."></textarea>
+						<span class="char-count" id="extra-count"></span>
+					</div>
+
+					<div class="form-field">
+						<label for="format">Formato del prompt</label>
+						<select id="format-select">
+							<option value="txt" selected>Testo</option>
+							<option value="markdown">Markdown</option>
+							<option value="json">JSON</option>
+							<option value="xml">XML</option>
+						</select>
+					</div>
+
+					<button type="button" class="generate-button" id="generate-btn" onclick="generate()">Genera Prompt</button>
+				</form>
+			</div>
+
+			<!-- Output area -->
+			<div class="output-container">
+				<textarea id="output" readonly></textarea>
+				<button type="button" class="copy-button" id="copy-btn" onclick="copy()">Copia negli appunti</button>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<span>Powered by</span>
+		<div class="footer-container">
+			<a href="https://linkedin.com/in/matteotempesta" target="_blank" class="personal-link"><strong>Matteo Tempesta</strong></a>
+			<a href="https://linkedin.com/in/samuelesalines" target="_blank" class="personal-link"><strong>Samuele Salines</strong></a>
+		</div>
+	</footer>
+	
+	<script src="script.js"></script>
+</body>
+
+</html>
