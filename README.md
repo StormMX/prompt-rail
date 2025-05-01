@@ -59,9 +59,9 @@ Questi i prossimi passi che verrano affrontanti per il continuo miglioramento de
 | 1.1.1    | Inserimento della scelta del modello di ChatGPT e conseguente calcolo Token Usati/Utilizzabili | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 | 1.1.2    | Download diretto del prompt (.txt)                                                             | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 | 1.1.3    | Inserimento di nuovi campi di input per miglioramento della risposta                           | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
-| 2.0.0    | PWA (Progressive Web App), installabile su mobile/desktop                                      | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
+| 2.0.0    | PWA (Progressive Web App) installabile su mobile/desktop                                       | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 | 2.1.0    | Inserimento della scelta di diverse tipologie di IA e relativo form per genarazione Prompt     | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
-| 3.0.0    | API                                                                                            | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
+| 3.0.0    | Creazione API                                                                                  | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 
 ## Note
 
