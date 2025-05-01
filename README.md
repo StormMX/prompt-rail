@@ -55,7 +55,7 @@ Questi i prossimi passi che verrano affrontanti per il continuo miglioramento de
 |----------|------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
 | 1.0.0    | MVP per generazione prompt multi-formato per ChatGPT                                           | ![done](https://img.shields.io/badge/Completato-brightgreen) |
 | 1.0.1    | Miglioramenti generali                                                                         | ![wip](https://img.shields.io/badge/Sviluppo-yellow)         |
-| 1.1.0    | Localizzazione IT/EN/ES                                                                        | ![todo](https://img.shields.io/badge/Inprogettazione-orange) |
+| 1.1.0    | Localizzazione IT/EN/ES                                                                        | ![todo](https://img.shields.io/badge/Progettazione-orange) |
 | 1.1.1    | Inserimento della scelta del modello di ChatGPT e conseguente calcolo Token Usati/Utilizzabili | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 | 1.1.2    | Download diretto del prompt (.txt)                                                             | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
 | 1.1.3    | Inserimento di nuovi campi di input per miglioramento della risposta                           | ![todo](https://img.shields.io/badge/Progettazione-orange)   |
